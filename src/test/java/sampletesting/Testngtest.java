@@ -61,7 +61,7 @@ public class Testngtest {
 	@Test
 	void Webtables() throws InterruptedException {
 
-		String[][] table = { { "Ajay", "Devan M", "ajaydevan721@gmail.com", "23", "10000", "IT" },
+		String[][] table = { { "Ajayan", "Devan M", "ajaydevan721@gmail.com", "23", "10000", "IT" },
 				{ "alex", "b", "alex@gmail.com", "22", "200000", "mech" } };
 
 		WebDriver s1 = new ChromeDriver();
