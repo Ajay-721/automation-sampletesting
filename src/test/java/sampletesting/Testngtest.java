@@ -92,5 +92,13 @@ public class Testngtest {
 		Thread.sleep(2000);
 		s1.close();
 	}
+	@Test
+	void link() {
+		WebDriver s1 = new ChromeDriver();
+		s1.manage().window().maximize();
+		s1.get("https://demoqa.com/links");
+		s1.findElement(By.linkText("Home")).click();
+		
+	}
 
 }
