@@ -94,10 +94,19 @@ public class Testngtest {
 	}
 	@Test
 	void link() {
+		String[] link1= {
+				"Home","\"//*[@id=\\\"dynamicLink\\\"]\"","Created"
+				
+		};
 		WebDriver s1 = new ChromeDriver();
 		s1.manage().window().maximize();
 		s1.get("https://demoqa.com/links");
-		s1.findElement(By.linkText("Home")).click();
+		JavascriptExecutor js= (JavascriptExecutor) s1;
+		
+		js.executeScript("argument[0].click();",s1.findElement(By.id(link1[0])));
+		//dynamic link
+		js.executeScript("argument[0].click();",s1.findElement(By.xpath(link1[1])));
+		js.executeScript("argument[0].click();",s1.findElement(By.linkText(link1[2])));
 		
 	}
 
