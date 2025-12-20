@@ -104,5 +104,28 @@ public class Testngtest {
 		s1.findElement(By.linkText("Created")).click();
 		
 	}
+	@Test
+	void upload_download() {
+		
+		WebDriver ab= new ChromeDriver();
+		ab.manage().window().maximize();
+		ab.get("https://demoqa.com/upload-download");
+		ab.findElement(By.id("downloadButton")).click();
+		JavascriptExecutor a = (JavascriptExecutor) ab;
+		for (int i = 0; i < 10; i++) {
+			a.executeScript("window.scrollBy(0, 50)");
+
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+		}
+	
+		ab.findElement(By.id("uploadFile")).sendKeys("\"C:\\Users\\AJAY\\Downloads\\minecraft-the-3840x2160-24242.jpg\"");
+		
+		System.out.println("file uploaded sucessfully");
+	}
 
 }
